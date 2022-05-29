@@ -8,8 +8,8 @@ function composeMachinesData(numberOfMachines){
         machineLocations.push({
             uid : uuidv4(),
             vin : i+1,
-            posx : 0,
-            posy: 0
+            posx : i,
+            posy: i
         });
     }
 }
@@ -35,6 +35,11 @@ const machinesRouter = express.Router();
 machinesRouter.get('/', (req, res) =>{
      
     res.send(machineLocations);
+});
+
+
+machinesRouter.get('/vehiclecount', (req,res) =>{
+    res.send(machineLocations.length);
 });
 
 machinesRouter.post('/', (req, res) =>{

@@ -8,8 +8,10 @@ function postLocationUpdates(numberOfVehicles){
         for(let i=0; i<numberOfVehicles; i++){
             const body = {
                 vin : i+1,
-                posx: Math.floor(Math.random() *700),
-                posy: Math.floor(Math.random() *800),
+                posx: Math.floor(Math.sin((i+1) * Math.random()) * 500),
+                    //Math.random() *700),
+                posy: Math.floor(Math.cos((i+1) * Math.random()) * 600),
+                    //Math.random() *800),
             };
 
             try {

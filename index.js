@@ -13,7 +13,7 @@ const VEHCOUNT = 25;
 
 app.use(bodyParser.json());
 app.use(cors({
-    origin: 'http://localhost:4200'
+    origin: ['http://localhost:4200', 'http://localhost:4500']
 }));
 app.use('/machines', machinesRouter);
 
@@ -30,7 +30,7 @@ app.listen(PORT, () => {
 //compose the machine objects
 composeMachinesData(VEHCOUNT);
 //run one location update per second
-postLocationUpdates(VEHCOUNT);
+//postLocationUpdates(VEHCOUNT);
 console.log(`Server running on port: http://localhost:${PORT}`);
 });
 
